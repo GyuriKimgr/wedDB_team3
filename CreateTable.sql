@@ -1,11 +1,11 @@
--- Å×ÀÌºí ¼ø¼­´Â °ü°è¸¦ °í·ÁÇÏ¿© ÇÑ ¹ø¿¡ ½ÇÇàÇØµµ ¿¡·¯°¡ ¹ß»ıÇÏÁö ¾Ê°Ô Á¤·ÄµÇ¾ú½À´Ï´Ù.
+-- í…Œì´ë¸” ìˆœì„œëŠ” ê´€ê³„ë¥¼ ê³ ë ¤í•˜ì—¬ í•œ ë²ˆì— ì‹¤í–‰í•´ë„ ì—ëŸ¬ê°€ ë°œìƒí•˜ì§€ ì•Šê²Œ ì •ë ¬ë˜ì—ˆìŠµë‹ˆë‹¤.
 drop table Developer;
 drop table Player;
 drop table Orders;
 drop table Game;
 drop table OrderItem;
 -- Developer Table Create SQL
--- Å×ÀÌºí »ı¼º SQL - Developer
+-- í…Œì´ë¸” ìƒì„± SQL - Developer
 -- Developer Table
 CREATE TABLE Developer (
     d_ID      VARCHAR2(20)    NOT NULL, 
@@ -15,22 +15,22 @@ CREATE TABLE Developer (
     PRIMARY KEY (d_name)
 );
 
--- Å×ÀÌºí Comment ¼³Á¤ SQL - Developer
-COMMENT ON TABLE Developer IS '°³¹ß»ç';
+-- í…Œì´ë¸” Comment ì„¤ì • SQL - Developer
+COMMENT ON TABLE Developer IS 'ê°œë°œì‚¬';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - Developer.d_ID
-COMMENT ON COLUMN Developer.d_ID IS '°³¹ß»çID';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - Developer.d_ID
+COMMENT ON COLUMN Developer.d_ID IS 'ê°œë°œì‚¬ID';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - Developer.d_name
-COMMENT ON COLUMN Developer.d_name IS '°³¹ß»çÀÌ¸§';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - Developer.d_name
+COMMENT ON COLUMN Developer.d_name IS 'ê°œë°œì‚¬ì´ë¦„';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - Developer.d_year
-COMMENT ON COLUMN Developer.d_year IS '¼³¸³³âµµ';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - Developer.d_year
+COMMENT ON COLUMN Developer.d_year IS 'ì„¤ë¦½ë…„ë„';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - Developer.d_site
-COMMENT ON COLUMN Developer.d_site IS '°³¹ß»çÀ¥»çÀÌÆ®';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - Developer.d_site
+COMMENT ON COLUMN Developer.d_site IS 'ê°œë°œì‚¬ì›¹ì‚¬ì´íŠ¸';
 
--- Unique Index ¼³Á¤
+-- Unique Index ì„¤ì •
 CREATE UNIQUE INDEX UQ_Developer_1
     ON Developer(d_ID);
 
@@ -38,34 +38,34 @@ CREATE UNIQUE INDEX UQ_Developer_1
 CREATE TABLE Player (
     u_ID          VARCHAR2(20)    NOT NULL, 
     u_PW          VARCHAR2(20)    NOT NULL, 
-    u_nick        VARCHAR2(20)    NOT NULL, 
+    u_nick        VARCHAR2(50)    NOT NULL, 
     u_name        VARCHAR2(20)    NOT NULL, 
     u_email       VARCHAR2(50)    NOT NULL, 
     u_signdate    DATE            NOT NULL, 
     PRIMARY KEY (u_ID)
 );
--- Å×ÀÌºí Comment ¼³Á¤ SQL - Player
-COMMENT ON TABLE Player IS '»ç¿ëÀÚ';
+-- í…Œì´ë¸” Comment ì„¤ì • SQL - Player
+COMMENT ON TABLE Player IS 'ì‚¬ìš©ì';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - Player.u_ID
-COMMENT ON COLUMN Player.u_ID IS '»ç¿ëÀÚID';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - Player.u_ID
+COMMENT ON COLUMN Player.u_ID IS 'ì‚¬ìš©ìID';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - Player.u_PW
-COMMENT ON COLUMN Player.u_PW IS 'ºñ¹Ğ¹øÈ£';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - Player.u_PW
+COMMENT ON COLUMN Player.u_PW IS 'ë¹„ë°€ë²ˆí˜¸';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - Player.u_nick
-COMMENT ON COLUMN Player.u_nick IS '´Ğ³×ÀÓ';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - Player.u_nick
+COMMENT ON COLUMN Player.u_nick IS 'ë‹‰ë„¤ì„';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - Player.u_name
-COMMENT ON COLUMN Player.u_name IS '»ç¿ëÀÚÀÌ¸§';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - Player.u_name
+COMMENT ON COLUMN Player.u_name IS 'ì‚¬ìš©ìì´ë¦„';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - Player.u_email
-COMMENT ON COLUMN Player.u_email IS 'ÀÌ¸ŞÀÏ ÁÖ¼Ò';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - Player.u_email
+COMMENT ON COLUMN Player.u_email IS 'ì´ë©”ì¼ ì£¼ì†Œ';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - Player.u_signdate
-COMMENT ON COLUMN Player.u_signdate IS '°¡ÀÔÀÏ';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - Player.u_signdate
+COMMENT ON COLUMN Player.u_signdate IS 'ê°€ì…ì¼';
 
--- Unique Index ¼³Á¤ SQL - Player(u_nick)
+-- Unique Index ì„¤ì • SQL - Player(u_nick)
 CREATE UNIQUE INDEX UQ_Player_1
     ON Player(u_nick);
     
@@ -79,20 +79,20 @@ CREATE TABLE Orders (
     FOREIGN KEY (u_ID) REFERENCES Player (u_ID)
 );
 
--- Å×ÀÌºí Comment ¼³Á¤ SQL - Orders
-COMMENT ON TABLE Orders IS 'ÁÖ¹®';
+-- í…Œì´ë¸” Comment ì„¤ì • SQL - Orders
+COMMENT ON TABLE Orders IS 'ì£¼ë¬¸';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - Orders.o_ID
-COMMENT ON COLUMN Orders.o_ID IS 'ÁÖ¹®ID';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - Orders.o_ID
+COMMENT ON COLUMN Orders.o_ID IS 'ì£¼ë¬¸ID';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - Orders.u_ID
-COMMENT ON COLUMN Orders.u_ID IS '»ç¿ëÀÚID';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - Orders.u_ID
+COMMENT ON COLUMN Orders.u_ID IS 'ì‚¬ìš©ìID';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - Orders.o_orderdate
-COMMENT ON COLUMN Orders.o_orderdate IS 'ÁÖ¹®ÀÏ';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - Orders.o_orderdate
+COMMENT ON COLUMN Orders.o_orderdate IS 'ì£¼ë¬¸ì¼';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - Orders.o_total
-COMMENT ON COLUMN Orders.o_total IS 'ÃÑÁÖ¹®±İ¾×';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - Orders.o_total
+COMMENT ON COLUMN Orders.o_total IS 'ì´ì£¼ë¬¸ê¸ˆì•¡';
 
 -- Game Table
 CREATE TABLE Game (
@@ -107,32 +107,32 @@ CREATE TABLE Game (
     PRIMARY KEY (g_ID),
     FOREIGN KEY (d_name) REFERENCES Developer (d_name)
 );
--- Å×ÀÌºí Comment ¼³Á¤ SQL - Game
-COMMENT ON TABLE Game IS '°ÔÀÓ';
+-- í…Œì´ë¸” Comment ì„¤ì • SQL - Game
+COMMENT ON TABLE Game IS 'ê²Œì„';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - Game.g_ID
-COMMENT ON COLUMN Game.g_ID IS '°ÔÀÓID';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - Game.g_ID
+COMMENT ON COLUMN Game.g_ID IS 'ê²Œì„ID';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - Game.g_title
-COMMENT ON COLUMN Game.g_title IS '°ÔÀÓÁ¦¸ñ';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - Game.g_title
+COMMENT ON COLUMN Game.g_title IS 'ê²Œì„ì œëª©';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - Game.g_info
-COMMENT ON COLUMN Game.g_info IS '¼³¸í';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - Game.g_info
+COMMENT ON COLUMN Game.g_info IS 'ì„¤ëª…';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - Game.g_startdate
-COMMENT ON COLUMN Game.g_startdate IS 'Ãâ½ÃÀÏ';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - Game.g_startdate
+COMMENT ON COLUMN Game.g_startdate IS 'ì¶œì‹œì¼';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - Game.d_name
-COMMENT ON COLUMN Game.d_name IS '°³¹ß»çÀÌ¸§';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - Game.d_name
+COMMENT ON COLUMN Game.d_name IS 'ê°œë°œì‚¬ì´ë¦„';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - Game.g_genre
-COMMENT ON COLUMN Game.g_genre IS 'Àå¸£';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - Game.g_genre
+COMMENT ON COLUMN Game.g_genre IS 'ì¥ë¥´';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - Game.g_price
-COMMENT ON COLUMN Game.g_price IS '°ÔÀÓ°¡°İ';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - Game.g_price
+COMMENT ON COLUMN Game.g_price IS 'ê²Œì„ê°€ê²©';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - Game.g_platform
-COMMENT ON COLUMN Game.g_platform IS 'Áö¿øÇÃ·§Æû';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - Game.g_platform
+COMMENT ON COLUMN Game.g_platform IS 'ì§€ì›í”Œë«í¼';
 
 -- OrderItem Table
 CREATE TABLE OrderItem (
@@ -146,23 +146,23 @@ CREATE TABLE OrderItem (
     FOREIGN KEY (g_ID) REFERENCES Game (g_ID)
 );
 
--- Å×ÀÌºí Comment ¼³Á¤ SQL - OrderItem
-COMMENT ON TABLE OrderItem IS 'ÁÖ¹®Ç×¸ñ';
+-- í…Œì´ë¸” Comment ì„¤ì • SQL - OrderItem
+COMMENT ON TABLE OrderItem IS 'ì£¼ë¬¸í•­ëª©';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - OrderItem.i_ID
-COMMENT ON COLUMN OrderItem.i_ID IS 'ÁÖ¹®Ç×¸ñID';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - OrderItem.i_ID
+COMMENT ON COLUMN OrderItem.i_ID IS 'ì£¼ë¬¸í•­ëª©ID';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - OrderItem.o_ID
-COMMENT ON COLUMN OrderItem.o_ID IS 'ÁÖ¹®ID';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - OrderItem.o_ID
+COMMENT ON COLUMN OrderItem.o_ID IS 'ì£¼ë¬¸ID';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - OrderItem.g_ID
-COMMENT ON COLUMN OrderItem.g_ID IS '°ÔÀÓID';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - OrderItem.g_ID
+COMMENT ON COLUMN OrderItem.g_ID IS 'ê²Œì„ID';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - OrderItem.g_title
-COMMENT ON COLUMN OrderItem.g_title IS '°ÔÀÓÁ¦¸ñ';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - OrderItem.g_title
+COMMENT ON COLUMN OrderItem.g_title IS 'ê²Œì„ì œëª©';
 
--- ÄÃ·³ Comment ¼³Á¤ SQL - OrderItem.g_price
-COMMENT ON COLUMN OrderItem.g_price IS '°ÔÀÓ°¡°İ';
+-- ì»¬ëŸ¼ Comment ì„¤ì • SQL - OrderItem.g_price
+COMMENT ON COLUMN OrderItem.g_price IS 'ê²Œì„ê°€ê²©';
 
 CREATE VIEW OrderItem_Game_Info AS
 SELECT oi.i_ID,
