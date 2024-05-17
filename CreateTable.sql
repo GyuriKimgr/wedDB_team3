@@ -38,7 +38,7 @@ CREATE UNIQUE INDEX UQ_Developer_1
 CREATE TABLE Player (
     u_ID          VARCHAR2(20)    NOT NULL, 
     u_PW          VARCHAR2(20)    NOT NULL, 
-    u_nick        VARCHAR2(50)    NOT NULL, 
+    u_nick        VARCHAR2(20)    NOT NULL, 
     u_name        VARCHAR2(20)    NOT NULL, 
     u_email       VARCHAR2(50)    NOT NULL, 
     u_signdate    DATE            NOT NULL, 
@@ -139,8 +139,6 @@ CREATE TABLE OrderItem (
     i_ID       VARCHAR2(20)    NOT NULL, 
     o_ID       VARCHAR2(20)    NOT NULL, 
     g_ID       VARCHAR2(20)    NOT NULL, 
-    g_title    VARCHAR(50)     NOT NULL, 
-    g_price    NUMBER          NOT NULL, 
     PRIMARY KEY (i_ID),
     FOREIGN KEY (o_ID) REFERENCES Orders (o_ID),
     FOREIGN KEY (g_ID) REFERENCES Game (g_ID)
@@ -168,8 +166,6 @@ CREATE VIEW OrderItem_Game_Info AS
 SELECT oi.i_ID,
        oi.o_ID,
        oi.g_ID,
-       oi.g_title,
-       oi.g_price,
        g.g_title AS game_title,
        g.g_price AS game_price
 FROM OrderItem oi
